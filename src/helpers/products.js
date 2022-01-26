@@ -1,3 +1,19 @@
+import prod1 from "../img/remeraNegra.jpg";
+import prod2 from "../img/remeraBlanca.jpg";
+import prod3 from "../img/remeraBlanca.jpg";
+import prod4 from "../img/remeraAzul.jpg";
+import prod5 from "../img/remeraRoja.jpg";
+import prod6 from "../img/buzoAzul.jpg";
+import prod7 from "../img/buzoCeleste.jpg";
+import prod8 from "../img/buzoGris.jpg";
+import prod9 from "../img/buzoNegro.jpg";
+import prod10 from "../img/buzoVerde.jpg";
+import prod11 from "../img/gorraAustralia.jpg";
+import prod12 from "../img/gorraBeisbol.jpg";
+import prod13 from "../img/gorraManchester.jpg";
+import prod14 from "../img/gorraNY.jpg";
+import prod15 from "../img/gorraRunning.jpg";
+
 const products = [
   {
     id: 1,
@@ -5,7 +21,7 @@ const products = [
     price: 2000,
     stock: 35,
     category: "Remera",
-    src: "../img/remeraNegra.jpg",
+    src: prod1,
   },
   {
     id: 2,
@@ -13,7 +29,7 @@ const products = [
     price: 2000,
     stock: 40,
     category: "Remera",
-    src: "../img/remeraBlanca.jpg",
+    src: prod2,
   },
   {
     id: 3,
@@ -21,7 +37,7 @@ const products = [
     price: 2000,
     stock: 50,
     category: "Remera",
-    src: "../img/remeraAmarilla.jpg",
+    src: prod3,
   },
   {
     id: 4,
@@ -29,7 +45,7 @@ const products = [
     price: 2000,
     stock: 38,
     category: "Remera",
-    src: "../img/remeraAzul.jpg",
+    src: prod4,
   },
   {
     id: 5,
@@ -37,7 +53,7 @@ const products = [
     price: 2000,
     stock: 45,
     category: "Remera",
-    src: "../img/remeraRoja.jpg",
+    src: prod5,
   },
   {
     id: 6,
@@ -45,7 +61,7 @@ const products = [
     price: 3000,
     stock: 35,
     category: "Buzo",
-    src: "../img/buzoAzul.jpg",
+    src: prod6,
   },
   {
     id: 7,
@@ -53,7 +69,7 @@ const products = [
     price: 3000,
     stock: 40,
     category: "Buzo",
-    src: "../img/buzoCeleste.jpg",
+    src: prod7,
   },
   {
     id: 8,
@@ -61,7 +77,7 @@ const products = [
     price: 3000,
     stock: 20,
     category: "Buzo",
-    src: "../img/buzoGris.jpg",
+    src: prod8,
   },
   {
     id: 9,
@@ -69,7 +85,7 @@ const products = [
     price: 3000,
     stock: 35,
     category: "Buzo",
-    src: "../img/buzoNegro.jpg",
+    src: prod9,
   },
   {
     id: 10,
@@ -77,7 +93,7 @@ const products = [
     price: 3000,
     stock: 50,
     category: "Buzo",
-    src: "../img/buzoVerde.jpg",
+    src: prod10,
   },
   {
     id: 11,
@@ -85,7 +101,7 @@ const products = [
     price: 1600,
     stock: 50,
     category: "Gorra",
-    src: "../img/gorraAustralia.jpg",
+    src: prod11,
   },
   {
     id: 12,
@@ -93,7 +109,7 @@ const products = [
     price: 1600,
     stock: 50,
     category: "Gorra",
-    src: "../img/gorraBeisbol.jpg",
+    src: prod12,
   },
   {
     id: 13,
@@ -101,7 +117,7 @@ const products = [
     price: 1600,
     stock: 50,
     category: "Gorra",
-    src: "../img/gorraManchester.jpg",
+    src: prod13,
   },
   {
     id: 14,
@@ -109,7 +125,7 @@ const products = [
     price: 1600,
     stock: 50,
     category: "Gorra",
-    src: "../img/gorraNY.jpg",
+    src: prod14,
   },
   {
     id: 15,
@@ -117,7 +133,7 @@ const products = [
     price: 1600,
     stock: 50,
     category: "Gorra",
-    src: "../img/gorraRunning.jpg",
+    src: prod15,
   },
 ];
 
