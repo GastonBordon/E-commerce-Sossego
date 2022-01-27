@@ -6,12 +6,18 @@ import "./ItemListContainer.css";
 
 export const ItemListContainer = () => {
   const [listProducts, setListProducts] = useState([]);
-
+  let categoryId = "";
   useEffect(() => {
     getProducts()
-      .then((data) => setListProducts(data))
+      .then((data) =>
+        setListProducts(
+          categoryId
+            ? data.filter((elem) => elem.category === categoryId)
+            : data
+        )
+      )
       .catch((err) => console.log(err));
-  }, []);
+  }, [categoryId]);
 
   function onAdd(cant) {
     console.log(cant);
