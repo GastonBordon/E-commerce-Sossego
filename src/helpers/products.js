@@ -22,6 +22,8 @@ const products = [
     stock: 35,
     category: "Remera",
     src: prod1,
+    description:
+      "It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing",
   },
   {
     id: 2,
@@ -30,6 +32,8 @@ const products = [
     stock: 40,
     category: "Remera",
     src: prod2,
+    description:
+      "It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing",
   },
   {
     id: 3,
@@ -38,6 +42,8 @@ const products = [
     stock: 50,
     category: "Remera",
     src: prod3,
+    description:
+      "It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing",
   },
   {
     id: 4,
@@ -46,6 +52,8 @@ const products = [
     stock: 38,
     category: "Remera",
     src: prod4,
+    description:
+      "It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing",
   },
   {
     id: 5,
@@ -54,6 +62,8 @@ const products = [
     stock: 45,
     category: "Remera",
     src: prod5,
+    description:
+      "It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing",
   },
   {
     id: 6,
@@ -62,6 +72,8 @@ const products = [
     stock: 35,
     category: "Buzo",
     src: prod6,
+    description:
+      "It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing",
   },
   {
     id: 7,
@@ -70,6 +82,8 @@ const products = [
     stock: 40,
     category: "Buzo",
     src: prod7,
+    description:
+      "It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing",
   },
   {
     id: 8,
@@ -78,6 +92,8 @@ const products = [
     stock: 20,
     category: "Buzo",
     src: prod8,
+    description:
+      "It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing",
   },
   {
     id: 9,
@@ -86,6 +102,8 @@ const products = [
     stock: 35,
     category: "Buzo",
     src: prod9,
+    description:
+      "It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing",
   },
   {
     id: 10,
@@ -94,6 +112,8 @@ const products = [
     stock: 50,
     category: "Buzo",
     src: prod10,
+    description:
+      "It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing",
   },
   {
     id: 11,
@@ -102,6 +122,8 @@ const products = [
     stock: 50,
     category: "Gorra",
     src: prod11,
+    description:
+      "It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing",
   },
   {
     id: 12,
@@ -110,6 +132,8 @@ const products = [
     stock: 50,
     category: "Gorra",
     src: prod12,
+    description:
+      "It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing",
   },
   {
     id: 13,
@@ -118,6 +142,8 @@ const products = [
     stock: 50,
     category: "Gorra",
     src: prod13,
+    description:
+      "It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing",
   },
   {
     id: 14,
@@ -126,6 +152,8 @@ const products = [
     stock: 50,
     category: "Gorra",
     src: prod14,
+    description:
+      "It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing",
   },
   {
     id: 15,
@@ -134,6 +162,8 @@ const products = [
     stock: 50,
     category: "Gorra",
     src: prod15,
+    description:
+      "It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing",
   },
 ];
 
