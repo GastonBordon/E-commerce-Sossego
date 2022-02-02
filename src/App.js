@@ -4,6 +4,7 @@ import { ItemListContainer } from "./components/ItemListContainer/ItemListContai
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import { ItemDetailContainer } from "./components/ItemDetailContainer/ItemDetailContainer";
+//import { cartContext } from "./context/CartContext";
 
 function App() {
   return (
@@ -11,10 +12,10 @@ function App() {
       <div className="App">
         <NavBar />
         <Routes>
-          <Route exact path="/" element={<ItemListContainer />} />
-          <Route exact path="/detalle" element={<ItemDetailContainer />} />
+          <Route path="/" element={<ItemListContainer />} />
+          <Route path="item/:id" element={<ItemDetailContainer />} />
+          <Route path="category/:category" element={<ItemListContainer />} />
         </Routes>
-        <ItemDetailContainer />
       </div>
     </BrowserRouter>
   );

@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import { CartWidget } from "../CartWidget/CartWidget";
 import "./NavBar.css";
 
@@ -7,9 +8,9 @@ const NavBar = () => {
     <div>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container-fluid">
-          <a className="navbar-brand " href="#">
+          <NavLink className="navbar-brand " to="/">
             Sossego
-          </a>
+          </NavLink>
           <button
             className="navbar-toggler"
             type="button"
@@ -29,9 +30,7 @@ const NavBar = () => {
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
-                  Productos
-                </a>
+                <NavLink to="/">Productos</NavLink>
               </li>
               <li className="nav-item dropdown">
                 <a
@@ -46,22 +45,13 @@ const NavBar = () => {
                 </a>
                 <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li>
-                    <a className="dropdown-item" href="#">
-                      Hombre
-                    </a>
+                    <NavLink to="/category/remera">Remeras</NavLink>
                   </li>
                   <li>
-                    <a className="dropdown-item" href="#">
-                      Mujer
-                    </a>
+                    <NavLink to="/category/buzo">Buzos</NavLink>
                   </li>
                   <li>
-                    <hr className="dropdown-divider" />
-                  </li>
-                  <li>
-                    <a className="dropdown-item" href="#">
-                      Niños
-                    </a>
+                    <NavLink to="/category/gorra">Gorras</NavLink>
                   </li>
                 </ul>
               </li>

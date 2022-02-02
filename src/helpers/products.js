@@ -20,7 +20,7 @@ const products = [
     name: "Remera Negra",
     price: 2000,
     stock: 35,
-    category: "Remera",
+    category: "remera",
     src: prod1,
     description:
       "It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing",
@@ -30,7 +30,7 @@ const products = [
     name: "Remera Blanca",
     price: 2000,
     stock: 40,
-    category: "Remera",
+    category: "remera",
     src: prod2,
     description:
       "It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing",
@@ -40,7 +40,7 @@ const products = [
     name: "Remera Amarilla",
     price: 2000,
     stock: 50,
-    category: "Remera",
+    category: "remera",
     src: prod3,
     description:
       "It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing",
@@ -50,7 +50,7 @@ const products = [
     name: "Remera Azul",
     price: 2000,
     stock: 38,
-    category: "Remera",
+    category: "remera",
     src: prod4,
     description:
       "It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing",
@@ -60,7 +60,7 @@ const products = [
     name: "Remera Roja",
     price: 2000,
     stock: 45,
-    category: "Remera",
+    category: "remera",
     src: prod5,
     description:
       "It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing",
@@ -70,7 +70,7 @@ const products = [
     name: "Buzo Azul",
     price: 3000,
     stock: 35,
-    category: "Buzo",
+    category: "buzo",
     src: prod6,
     description:
       "It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing",
@@ -80,7 +80,7 @@ const products = [
     name: "Buzo Celeste",
     price: 3000,
     stock: 40,
-    category: "Buzo",
+    category: "buzo",
     src: prod7,
     description:
       "It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing",
@@ -90,7 +90,7 @@ const products = [
     name: "Buzo Gris",
     price: 3000,
     stock: 20,
-    category: "Buzo",
+    category: "buzo",
     src: prod8,
     description:
       "It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing",
@@ -100,7 +100,7 @@ const products = [
     name: "Buzo Negro",
     price: 3000,
     stock: 35,
-    category: "Buzo",
+    category: "buzo",
     src: prod9,
     description:
       "It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing",
@@ -110,7 +110,7 @@ const products = [
     name: "Buzo Verde",
     price: 3000,
     stock: 50,
-    category: "Buzo",
+    category: "buzo",
     src: prod10,
     description:
       "It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing",
@@ -120,7 +120,7 @@ const products = [
     name: "Gorra Australia",
     price: 1600,
     stock: 50,
-    category: "Gorra",
+    category: "gorra",
     src: prod11,
     description:
       "It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing",
@@ -130,7 +130,7 @@ const products = [
     name: "Gorra Beisbol",
     price: 1600,
     stock: 50,
-    category: "Gorra",
+    category: "gorra",
     src: prod12,
     description:
       "It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing",
@@ -140,7 +140,7 @@ const products = [
     name: "Gorra Manchester",
     price: 1600,
     stock: 50,
-    category: "Gorra",
+    category: "gorra",
     src: prod13,
     description:
       "It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing",
@@ -150,7 +150,7 @@ const products = [
     name: "Gorra NY",
     price: 1600,
     stock: 50,
-    category: "Gorra",
+    category: "gorra",
     src: prod14,
     description:
       "It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing",
@@ -160,7 +160,7 @@ const products = [
     name: "Gorra Running",
     price: 1600,
     stock: 50,
-    category: "Gorra",
+    category: "gorra",
     src: prod15,
     description:
       "It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing",
