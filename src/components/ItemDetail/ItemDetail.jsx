@@ -1,12 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import "./ItemDetail.css";
 import ItemCount from "../ItemCount/ItemCount";
+import { Link } from "react-router-dom";
 
 const ItemDetail = (props) => {
+  const [counter, setCounter] = useState(0);
+
   const { name, price, src, description } = props.product;
 
   function onAdd(cant) {
-    console.log(cant);
+    setCounter(cant);
   }
 
   return (
@@ -29,8 +32,19 @@ const ItemDetail = (props) => {
                 <p className="card-text">{description}</p>
               </div>
             </div>
-            <ItemCount stock={5} initial={1} onAdd={onAdd} />
           </div>
+          {counter === 0 ? (
+            <ItemCount stock={5} initial={1} onAdd={onAdd} />
+          ) : (
+            <>
+              <Link to="/cart">
+                <button>Terminar Compra</button>
+              </Link>
+              <Link to="/">
+                <button>Seguir Comprando</button>
+              </Link>
+            </>
+          )}
         </div>
       )}
     </>
