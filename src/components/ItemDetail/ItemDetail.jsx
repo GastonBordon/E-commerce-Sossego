@@ -2,20 +2,22 @@ import React, { useState } from "react";
 import "./ItemDetail.css";
 import ItemCount from "../ItemCount/ItemCount";
 import { Link } from "react-router-dom";
+import { useCartContext } from "../../context/CartContext";
 
-const ItemDetail = (props) => {
+const ItemDetail = ({ product }) => {
+  const { cartList, addToCart } = useCartContext();
   const [counter, setCounter] = useState(0);
 
-  const { name, price, src, description } = props.product;
+  const { name, price, src, description } = product;
 
   function onAdd(cant) {
-    setCounter(cant);
+    addToCart({ ...product, cantidad: cant });
   }
-
+  console.log(cartList);
   return (
     // Me falta poner el loader, no me sale
     <>
-      {props.product === {} ? (
+      {product === {} ? (
         <div className="spinner-border" role="status">
           <span className="visually-hidden">Loading...</span>
         </div>

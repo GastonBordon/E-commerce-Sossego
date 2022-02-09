@@ -1,5 +1,6 @@
 import Item from "../Item/Item";
 const ItemList = ({ listProducts }) => {
+  //agregar memo!!!
   return (
     <>
       {listProducts.length ? (

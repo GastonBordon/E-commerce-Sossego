@@ -8,18 +8,28 @@ export const ItemDetailContainer = () => {
   const { id } = useParams();
 
   const [product, setProduct] = useState({});
+  const [loading, setLoading] = useState(true);
   let productId = parseInt(id);
   useEffect(() => {
     getProducts()
       .then((data) => {
         setProduct(data.find((item) => item.id === productId));
       })
-      .catch((err) => console.log(err));
+      .catch((err) => console.log(err))
+      .finally(() => setLoading(false));
   }, [productId]);
 
   return (
-    <div className="d-flex">
-      <ItemDetail product={product} />
-    </div>
+    <>
+      {loading ? (
+        <div className="spinner-border" role="status">
+          <span className="visually-hidden">Loading...</span>
+        </div>
+      ) : (
+        <div className="d-flex">
+          <ItemDetail product={product} />
+        </div>
+      )}
+    </>
   );
 };
