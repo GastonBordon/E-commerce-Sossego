@@ -9,6 +9,12 @@ export function useCartContext() {
 function CartContextProvider({ children }) {
   const [cartList, setCartList] = useState([]);
 
+  function noDuplicate(item) {
+    const findCartList = cartList.find((i) => {
+      return i.id === item.id;
+    });
+    return findCartList;
+  }
   function addToCart(item) {
     if (noDuplicate(item)) {
       const changeQuantity = [...cartList];
@@ -19,20 +25,22 @@ function CartContextProvider({ children }) {
       });
       return setCartList(changeQuantity);
     }
+
     return setCartList([...cartList, { item, quantity: 1 }]);
   }
   function clearCartList() {
     setCartList([]);
   }
-  function noDuplicate(item) {
-    const findCartList = cartList.find((i) => {
-      return i.id === item.id;
-    });
-    return findCartList;
+
+  function removeOne(itemSelected) {
+    const removeItem = [...cartList];
+    return setCartList(removeItem.filter((x) => x.id !== itemSelected.id));
   }
 
   return (
-    <cartContext.Provider value={{ cartList, addToCart, clearCartList }}>
+    <cartContext.Provider
+      value={{ cartList, addToCart, clearCartList, removeOne }}
+    >
       {children}
     </cartContext.Provider>
   );
