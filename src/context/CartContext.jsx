@@ -9,37 +9,46 @@ export function useCartContext() {
 function CartContextProvider({ children }) {
   const [cartList, setCartList] = useState([]);
 
-  function noDuplicate(item) {
-    const findCartList = cartList.find((i) => {
-      return i.id === item.id;
-    });
-    return findCartList;
-  }
   function addToCart(item) {
-    if (noDuplicate(item)) {
-      const changeQuantity = [...cartList];
-      changeQuantity.forEach((x) => {
-        if (x.id === item.id) {
-          x.quantity += 1;
-        }
-      });
-      return setCartList(changeQuantity);
+    const index = cartList.findIndex((prod) => prod.item.id === item.item.id);
+    if (index === -1) {
+      return setCartList([...cartList, item]);
+    } else {
+      const cant = cartList[index].quantity;
+      cartList[index].quantity = item.quantity + cant;
+      const newCartList = [...cartList];
+      setCartList(newCartList);
     }
-
-    return setCartList([...cartList, { item, quantity: 1 }]);
   }
+
+  const sumTotal = () => {
+    return cartList.reduce(
+      (acum, prod) => (acum = acum + prod.item.price * prod.quantity),
+      0
+    );
+  };
+
+  const quantity = () => {
+    return cartList.reduce((acum, prod) => (acum += prod.quantity), 0);
+  };
+
   function clearCartList() {
     setCartList([]);
   }
 
-  function removeOne(itemSelected) {
-    const removeItem = [...cartList];
-    return setCartList(removeItem.filter((x) => x.id !== itemSelected.id));
+  function removeOne(id) {
+    setCartList(cartList.filter((prod) => prod.item.id !== id));
   }
-
   return (
     <cartContext.Provider
-      value={{ cartList, addToCart, clearCartList, removeOne }}
+      value={{
+        cartList,
+        addToCart,
+        clearCartList,
+        removeOne,
+        sumTotal,
+        quantity,
+      }}
     >
       {children}
     </cartContext.Provider>

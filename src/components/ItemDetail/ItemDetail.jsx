@@ -5,15 +5,14 @@ import { Link } from "react-router-dom";
 import { useCartContext } from "../../context/CartContext";
 
 const ItemDetail = ({ product }) => {
-  const { cartList, addToCart } = useCartContext();
   const [counter, setCounter] = useState(0);
+  const { cartList, addToCart } = useCartContext();
 
-  const { name, price, src, description } = product;
+  const { name, price, src, description, stock } = product;
 
   function onAdd(cant) {
-    addToCart({ ...product, cantidad: cant });
+    addToCart({ item: product, quantity: cant });
   }
-  console.log(cartList);
   return (
     // Me falta poner el loader, no me sale
     <>
@@ -36,7 +35,7 @@ const ItemDetail = ({ product }) => {
             </div>
           </div>
           {counter === 0 ? (
-            <ItemCount stock={5} initial={1} onAdd={onAdd} />
+            <ItemCount stock={stock} initial={1} onAdd={onAdd} />
           ) : (
             <>
               <Link to="/cart">
