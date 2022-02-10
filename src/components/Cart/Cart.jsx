@@ -15,40 +15,39 @@ export const Cart = () => {
                 <th scope="col">Precio</th>
                 <th scope="col">Unidades</th>
                 <th scope="col">Eliminar</th>
-                <th scope="col">Total Compra</th>
               </tr>
             </thead>
-            {cartList.map((prod) => (
-              <>
+            <>
+              {cartList.map((prod) => (
                 <tbody id="table-body">
                   <tr>
-                    <td>{prod.id}</td>
-                    <td>{prod.name}</td>
-                    <td>{prod.price}</td>
+                    <td>{prod.item.id}</td>
+                    <td>{prod.item.name}</td>
+                    <td>{prod.item.price}</td>
                     <td>{prod.quantity}</td>
                     <td>
                       <button
                         className="btn btn-danger buttonDelete"
                         type="button"
-                        onClick={removeOne(prod.item.id)}
+                        onClick={() => removeOne(prod.item.id)}
                       >
                         X
                       </button>
                     </td>
                   </tr>
                 </tbody>
-                <tfoot>
-                  <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>`$${sumTotal()}`</td>
-                  </tr>
-                </tfoot>
-              </>
-            ))}
+              ))}
+              <tfoot>
+                <tr>
+                  <td>Total Compra</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>${sumTotal()}</td>
+                </tr>
+              </tfoot>
+            </>
           </table>
           <button onClick={clearCartList}>Vaciar Carrito</button>
         </>
