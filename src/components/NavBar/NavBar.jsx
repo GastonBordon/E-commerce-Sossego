@@ -3,8 +3,10 @@ import { NavLink, Link } from "react-router-dom";
 import { CartWidget } from "../CartWidget/CartWidget";
 import "./NavBar.css";
 import img from "../../img/logo-resaltado.png";
+import { useCartContext } from "../../context/CartContext";
 
 const NavBar = () => {
+  const { quantity } = useCartContext();
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -67,6 +69,7 @@ const NavBar = () => {
             </ul>
           </div>
           <Link to="/cart">
+            {quantity() !== 0 && quantity()}
             <CartWidget />
           </Link>
         </div>

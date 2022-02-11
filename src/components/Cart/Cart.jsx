@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useCartContext } from "../../context/CartContext";
 import "./Cart.css";
 
@@ -52,7 +53,12 @@ export const Cart = () => {
           <button onClick={clearCartList}>Vaciar Carrito</button>
         </>
       ) : (
-        <h2>Para realizar una compra, agregue productos.</h2>
+        <>
+          <p>Carrito Vacío</p>
+          <Link to="/">
+            <button className="btn btn-success">Ir a Productos</button>
+          </Link>
+        </>
       )}
     </>
   );
