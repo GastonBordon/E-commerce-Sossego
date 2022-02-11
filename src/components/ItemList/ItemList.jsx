@@ -1,27 +1,22 @@
+import { memo } from "react";
 import Item from "../Item/Item";
-const ItemList = ({ listProducts }) => {
-  //agregar memo!!!
-  return (
-    <>
-      {listProducts.length ? (
-        listProducts.map((elem) => (
-          <Item
-            key={elem.id}
-            name={elem.name}
-            stock={elem.stock}
-            price={elem.price}
-            category={elem.category}
-            id={elem.id}
-            src={elem.src}
-          />
-        ))
-      ) : (
-        <div className="spinner-border" role="status">
-          <span className="visually-hidden">Loading...</span>
-        </div>
-      )}
-    </>
-  );
-};
+
+const ItemList = memo(
+  ({ listProducts }) => {
+    return (
+      <>
+        {listProducts.length ? (
+          listProducts.map((prod) => <Item key={`${prod.id}`} prod={prod} />)
+        ) : (
+          <div className="spinner-border" role="status">
+            <span className="visually-hidden">Loading...</span>
+          </div>
+        )}
+      </>
+    );
+  },
+  (prevProp, nextProp) =>
+    prevProp.listProducts.length === nextProp.listProducts.length
+);
 
 export default ItemList;

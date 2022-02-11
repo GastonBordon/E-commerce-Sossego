@@ -18,7 +18,7 @@ const products = [
   {
     id: 1,
     name: "Remera Negra",
-    price: 2000,
+    price: 3000,
     stock: 35,
     category: "remera",
     src: prod1,

@@ -5,6 +5,7 @@ import "./ItemDetailContainer.css";
 import { useParams } from "react-router-dom";
 
 export const ItemDetailContainer = () => {
+  console.log("itemdetailcontainer");
   const { id } = useParams();
 
   const [product, setProduct] = useState({});
