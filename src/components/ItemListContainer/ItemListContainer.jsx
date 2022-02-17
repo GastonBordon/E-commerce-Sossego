@@ -1,5 +1,11 @@
 import { useState, useEffect } from "react";
-import getProducts from "../../helpers/getProducts";
+import {
+  getDocs,
+  collection,
+  getFirestore,
+  query,
+  where,
+} from "firebase/firestore";
 import ItemList from "../ItemList/ItemList";
 import "./ItemListContainer.css";
 import { useParams } from "react-router-dom";
@@ -8,16 +14,35 @@ export const ItemListContainer = () => {
   const { category } = useParams();
   const [listProducts, setListProducts] = useState([]);
   let categoryId = category;
+
   useEffect(() => {
-    getProducts()
-      .then((data) =>
-        setListProducts(
-          categoryId
-            ? data.filter((elem) => elem.category === categoryId)
-            : data
-        )
-      )
-      .catch((err) => console.log(err));
+    const db = getFirestore();
+
+    const queryCollection = collection(db, "productos");
+
+    const queryFilter = query(
+      collection(db, "productos"),
+      where("category", "==", categoryId)
+    );
+
+    categoryId
+      ? getDocs(queryFilter)
+      : getDocs(queryCollection)
+          .then((res) =>
+            setListProducts(
+              res.docs.map((prod) => ({ id: prod.id, ...prod.data() }))
+            )
+          )
+          .catch((err) => console.log(err));
+    // getProducts()
+    //   .then((data) =>
+    //     setListProducts(
+    //       categoryId
+    //         ? data.filter((elem) => elem.category === categoryId)
+    //         : data
+    //     )
+    //   )
+    //   .catch((err) => console.log(err));
   }, [categoryId]);
 
   return (

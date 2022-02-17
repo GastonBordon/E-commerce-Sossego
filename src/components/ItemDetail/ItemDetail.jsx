@@ -1,12 +1,12 @@
-import React, { useState, memo } from "react";
+import { useState } from "react";
 import "./ItemDetail.css";
 import ItemCount from "../ItemCount/ItemCount";
 import { Link } from "react-router-dom";
 import { useCartContext } from "../../context/CartContext";
 
 const ItemDetail = ({ product }) => {
-  const [counter, setCounter] = useState(0);
-  const { cartList, addToCart } = useCartContext();
+  const [counter] = useState(0);
+  const { addToCart } = useCartContext();
 
   const { name, price, src, description, stock } = product;
 
