@@ -20,29 +20,17 @@ export const ItemListContainer = () => {
 
     const queryCollection = collection(db, "productos");
 
-    const queryFilter = query(
-      collection(db, "productos"),
-      where("category", "==", categoryId)
-    );
+    const queryFilter = !categoryId
+      ? queryCollection
+      : query(queryCollection, where("category", "==", categoryId));
 
-    categoryId
-      ? getDocs(queryFilter)
-      : getDocs(queryCollection)
-          .then((res) =>
-            setListProducts(
-              res.docs.map((prod) => ({ id: prod.id, ...prod.data() }))
-            )
-          )
-          .catch((err) => console.log(err));
-    // getProducts()
-    //   .then((data) =>
-    //     setListProducts(
-    //       categoryId
-    //         ? data.filter((elem) => elem.category === categoryId)
-    //         : data
-    //     )
-    //   )
-    //   .catch((err) => console.log(err));
+    getDocs(queryFilter)
+      .then((res) =>
+        setListProducts(
+          res.docs.map((prod) => ({ id: prod.id, ...prod.data() }))
+        )
+      )
+      .catch((err) => console.log(err));
   }, [categoryId]);
 
   return (
