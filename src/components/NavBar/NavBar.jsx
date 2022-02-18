@@ -29,11 +29,6 @@ const NavBar = () => {
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
                 <NavLink className="nav-link active" to="/">
-                  Inicio
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink className="nav-link active" to="/">
                   Productos
                 </NavLink>
               </li>
@@ -50,17 +45,26 @@ const NavBar = () => {
                 </a>
                 <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li>
-                    <NavLink className="nav-link active" to="/category/remera">
+                    <NavLink
+                      className="nav-link {({active}) => active ? 'boton' : ''}"
+                      to="/category/remera"
+                    >
                       Remeras
                     </NavLink>
                   </li>
                   <li>
-                    <NavLink className="nav-link active" to="/category/buzo">
+                    <NavLink
+                      className="nav-link {({active}) => active ? 'boton' : ''}"
+                      to="/category/buzo"
+                    >
                       Buzos
                     </NavLink>
                   </li>
                   <li>
-                    <NavLink className="nav-link active" to="/category/gorra">
+                    <NavLink
+                      className="nav-link {({active}) => active ? 'boton' : ''}"
+                      to="/category/gorra"
+                    >
                       Gorras
                     </NavLink>
                   </li>
