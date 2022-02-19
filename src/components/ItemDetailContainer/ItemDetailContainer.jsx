@@ -10,7 +10,6 @@ export const ItemDetailContainer = () => {
   const [loading, setLoading] = useState(true);
 
   let productId = id;
-  console.log(productId);
 
   useEffect(() => {
     const db = getFirestore();
@@ -22,7 +21,6 @@ export const ItemDetailContainer = () => {
       .finally(() => setLoading(false));
   }, [productId]);
 
-  console.log(product);
   return (
     <>
       {loading ? (
