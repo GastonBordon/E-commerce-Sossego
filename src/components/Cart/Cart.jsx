@@ -27,24 +27,25 @@ export const Cart = () => {
     };
     order.total = total();
 
-    order.products = cartList.map((cartProducts) => {
-      const id = cartProducts.item.id;
-      const name = cartProducts.item.name;
-      const price = cartProducts.item.price * cartProducts.quantity;
+    order.products = cartList.map((cartProduct) => {
+      const id = cartProduct.item.id;
+      const name = cartProduct.item.name;
+      const price = cartProduct.item.price * cartProduct.quantity;
+      const quantity = cartProduct.quantity;
 
       return {
         id,
         name,
         price,
+        quantity,
       };
     });
-    const purchaseId = cartList[0].item.id;
-    alert(`Tu número de orden de compra es: ${purchaseId}`);
-    // alert(`Tu numero de orden es: ${purchaseId}`);
 
     const db = getFirestore();
     const ordersCollection = collection(db, "orders");
-    await addDoc(ordersCollection, order).then((res) => console.log(res));
+    await addDoc(ordersCollection, order)
+      .then(({ id }) => console.log(`Número de orden de compra: ${id}`))
+      .catch((err) => console.log(err));
 
     const queryCollection = collection(db, "items");
 
@@ -60,18 +61,21 @@ export const Cart = () => {
     const batch = writeBatch(db);
 
     await getDocs(queryUpdateStock)
-      .then((res) =>
-        res.docs.forEach((resp) =>
-          batch.update(resp.ref, {
-            stock:
-              res.data().stock -
-              cartList.find((itm) => itm.item.id === res.id).quantity,
-          })
-        )
+      .then(
+        (res) => cartList.find((itm) => itm.id === res.id)
+        // res.docs.forEach(
+        //   (res) =>
+        // batch.update(res.ref, {
+        //   stock:
+        //     res.data().stock -
+        //     cartList.find((itm) => itm.id === res.id).quantity,
+        // })
       )
+      //)
       .catch((err) => console.log(err))
       //en finally vaciar el carrito y alert con compra exitosa
       .finally(() => clearCartList());
+
     batch.commit();
   };
 
@@ -93,7 +97,7 @@ export const Cart = () => {
               {cartList.map((prod) => (
                 <tbody id="table-body">
                   <tr>
-                    <td>{prod.item.id}</td>
+                    <td key={prod.item.id}>{prod.item.id}</td>
                     <td>{prod.item.name}</td>
                     <td>${prod.item.price}</td>
                     <td>{prod.quantity}</td>

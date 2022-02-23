@@ -12,6 +12,7 @@ function CartContextProvider({ children }) {
   function addToCart(item) {
     const index = cartList.findIndex((prod) => prod.item.id === item.item.id);
     if (index === -1) {
+      item.key = item.id;
       return setCartList([...cartList, item]);
     } else {
       const cant = cartList[index].quantity;
