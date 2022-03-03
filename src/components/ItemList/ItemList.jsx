@@ -15,8 +15,13 @@ const ItemList = memo(
       </>
     );
   },
-  (prevProp, nextProp) =>
-    prevProp.listProducts.length === nextProp.listProducts.length
+  (prevProp, nextProp) => {
+    return prevProp.listProducts.length === 0 ||
+      nextProp.listProducts.length === 0
+      ? false
+      : nextProp.listProducts[0]?.category ===
+          prevProp.listProducts[0]?.category;
+  }
 );
 
 export default ItemList;

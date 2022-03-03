@@ -1,15 +1,14 @@
-import React from "react";
 import { NavLink, Link } from "react-router-dom";
 import { CartWidget } from "../CartWidget/CartWidget";
-import "./NavBar.css";
 import img from "../../img/logo-resaltado.png";
 import { useCartContext } from "../../context/CartContext";
+import "./NavBar.css";
 
 const NavBar = () => {
   const { quantity } = useCartContext();
   return (
     <div>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <nav className="navbar navbar-expand-lg navbarStyles">
         <div className="container-fluid">
           <NavLink className="navbar-brand logo " to="/">
             <img src={`${img}`} alt="logo de sossego" />
@@ -27,7 +26,7 @@ const NavBar = () => {
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              <li className="nav-item">
+              <li className="nav-item text-dark">
                 <NavLink
                   className="nav-link {({active}) => active ? 'boton' : ''}"
                   to="/"
@@ -44,7 +43,7 @@ const NavBar = () => {
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
                 >
-                  Categorias
+                  Categorías
                 </a>
                 <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li>

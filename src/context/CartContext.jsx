@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState, useEffect } from "react";
 
 const cartContext = createContext([]);
 
@@ -8,6 +8,23 @@ export function useCartContext() {
 
 function CartContextProvider({ children }) {
   const [cartList, setCartList] = useState([]);
+
+  useEffect(() => {
+    const listStorage = getStorage();
+    debugger;
+    if (listStorage) {
+      const cartListStorage = JSON.parse(listStorage);
+      setCartList([...cartListStorage]);
+    }
+  }, []);
+
+  function saveStorage() {
+    localStorage.setItem("cartList", JSON.stringify(cartList));
+  }
+
+  function getStorage() {
+    return localStorage.getItem("cartList");
+  }
 
   function addToCart(item) {
     const index = cartList.findIndex((prod) => prod.item.id === item.item.id);
@@ -20,6 +37,7 @@ function CartContextProvider({ children }) {
       const newCartList = [...cartList];
       setCartList(newCartList);
     }
+    saveStorage();
   }
 
   const total = () => {
@@ -35,10 +53,12 @@ function CartContextProvider({ children }) {
 
   function clearCartList() {
     setCartList([]);
+    saveStorage();
   }
 
   function removeOne(id) {
     setCartList(cartList.filter((prod) => prod.item.id !== id));
+    saveStorage();
   }
   return (
     <cartContext.Provider

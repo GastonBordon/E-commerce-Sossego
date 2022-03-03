@@ -34,10 +34,12 @@ export const ItemListContainer = () => {
   }, [categoryId]);
 
   return (
-    <div className="bg-info">
-      {" "}
+    <div className="container itemListContainer">
+      <div></div>
       <h2>Bienvenido a la Ecommerce</h2>
-      <ItemList listProducts={listProducts} />
+      <div className="row align-items-center justify-content-center">
+        <ItemList listProducts={listProducts} />
+      </div>
     </div>
   );
 };
