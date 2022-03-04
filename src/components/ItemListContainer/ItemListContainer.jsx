@@ -35,8 +35,9 @@ export const ItemListContainer = () => {
 
   return (
     <div className="container itemListContainer">
-      <div></div>
-      <h2>Bienvenido a la Ecommerce</h2>
+      <div className="container">
+        <h2>Bienvenido a la Ecommerce</h2>
+      </div>
       <div className="row align-items-center justify-content-center">
         <ItemList listProducts={listProducts} />
       </div>

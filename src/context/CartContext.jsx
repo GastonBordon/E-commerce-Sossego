@@ -11,7 +11,7 @@ function CartContextProvider({ children }) {
 
   useEffect(() => {
     const listStorage = getStorage();
-    debugger;
+
     if (listStorage) {
       const cartListStorage = JSON.parse(listStorage);
       setCartList([...cartListStorage]);

@@ -6,7 +6,7 @@ const Item = memo(
   ({ prod }) => {
     return (
       <>
-        <div className="card mb-3 cardItemContainer">
+        <div className="card mb-3 cardItemContainer border border-warning m-2">
           <div className="row g-0 d-flex flex-column">
             <div>
               <img
@@ -20,7 +20,9 @@ const Item = memo(
                 <h5 className="card-title">{`${prod.name}`}</h5>
                 <p className="card-text">Precio: {`${prod.price}`}</p>
                 <NavLink to={`/item/${prod.id}`}>
-                  <button>Ver Producto</button>
+                  <button className="btn btn-outline-warning">
+                    Ver Producto
+                  </button>
                 </NavLink>
               </div>
             </div>
