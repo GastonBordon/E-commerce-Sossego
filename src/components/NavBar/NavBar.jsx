@@ -74,9 +74,14 @@ const NavBar = () => {
               </li>
             </ul>
           </div>
-          <Link to="/cart">
-            {quantity() !== 0 && quantity()}
-            <CartWidget />
+          <Link
+            to="/cart"
+            className="d-flex flex-row justify-content-between text-decoration-none align-items-center p-2 "
+          >
+            <div className="quantity">{quantity() !== 0 && quantity()}</div>
+            <div>
+              <CartWidget />
+            </div>
           </Link>
         </div>
       </nav>

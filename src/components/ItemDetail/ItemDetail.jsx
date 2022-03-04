@@ -21,31 +21,35 @@ const ItemDetail = ({ product }) => {
           <span className="visually-hidden">Loading...</span>
         </div>
       ) : (
-        <div className="card mb-3 cardItemContainer">
-          <div className="row g-0">
-            <div className="col-md-4">
-              <img src={src} className="img-fluid rounded-start" alt={name} />
-            </div>
-            <div className="col-md-8">
-              <div className="card-body">
-                <h5 className="card-title">{name}</h5>
-                <p className="card-text">Precio: ${price}</p>
-                <p className="card-text">{description}</p>
+        <div className="mb-3 cardItemContainer">
+          <div className="d-flex flex-row justify-content-center">
+            <img
+              src={src}
+              className="img-fluid imgDetailSize rounded-start"
+              alt={name}
+            />
+            <div className="d-flex flex-column">
+              <div className="card card-body cardDetail">
+                <h4 className="card-title">{name}</h4>
+                <p className="card-text productPrice">Precio: ${price}</p>
+                <div>
+                  {counter === 0 ? (
+                    <ItemCount stock={stock} initial={1} onAdd={onAdd} />
+                  ) : (
+                    <>
+                      <Link to="/cart">
+                        <button>Terminar Compra</button>
+                      </Link>
+                      <Link to="/">
+                        <button>Seguir Comprando</button>
+                      </Link>
+                    </>
+                  )}
+                </div>
               </div>
             </div>
           </div>
-          {counter === 0 ? (
-            <ItemCount stock={stock} initial={1} onAdd={onAdd} />
-          ) : (
-            <>
-              <Link to="/cart">
-                <button>Terminar Compra</button>
-              </Link>
-              <Link to="/">
-                <button>Seguir Comprando</button>
-              </Link>
-            </>
-          )}
+          <p className="description">{description}</p>
         </div>
       )}
     </>

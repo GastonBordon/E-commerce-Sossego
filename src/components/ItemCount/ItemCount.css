@@ -1,0 +1,10 @@
+.countNumber {
+  font-size: 1.5rem;
+}
+.btnCount {
+  font-size: 1.5rem;
+  font-weight: 700;
+  background-color: white;
+  margin-bottom: 0.5rem;
+  padding: 0;
+}

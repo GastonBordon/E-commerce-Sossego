@@ -1,3 +1,26 @@
 .cardItemContainer {
-  max-width: 540px;
+  margin: 2rem;
+  padding: 1rem;
+  padding-bottom: 0;
+  max-width: 600px;
+  border: solid;
+  border-width: 1px;
+  border-color: #ffc107;
+}
+.imgDetailSize {
+  width: 300px;
+  height: 300px;
+}
+.productPrice {
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+.cardDetail {
+  margin-left: 0;
+  padding: 5px;
+  border: 0;
+}
+.description {
+  text-align: justify;
+  padding: 10px;
 }

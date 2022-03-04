@@ -11,14 +11,16 @@ const Item = memo(
             <div className="imgSize">
               <img
                 src={`${prod.src}`}
-                className="rounded-start"
+                className="rounded-start imgSize"
                 alt={`${prod.name}`}
               />
             </div>
             <div>
               <div className="card-body">
                 <h5 className="card-title">{`${prod.name}`}</h5>
-                <p className="card-text">Precio: {`${prod.price}`}</p>
+                <p className="card-text productPrice">
+                  Precio: ${`${prod.price}`}
+                </p>
                 <NavLink to={`/item/${prod.id}`}>
                   <button className="btn btn-outline-warning">
                     Ver Producto

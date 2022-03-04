@@ -103,8 +103,12 @@ const Form = () => {
 
   return (
     <>
+      <h2 className="mt-4">Complete los datos de envío</h2>
       {id !== "" && <h3>Tu número de orden es {id}</h3> && console.log(id)}
-      <form onSubmit={checkOut} className="row g-3 needs-validation">
+      <form
+        onSubmit={checkOut}
+        className="row g-3 needs- mt-4 mb-4 p-3 border border-1 border-warning"
+      >
         <div className="col-md-4">
           <label className="form-label">
             Nombre
@@ -130,7 +134,6 @@ const Form = () => {
               required
             />
           </label>
-
           <div className="valid-feedback">Looks good!</div>
         </div>
         <div className="col-md-4">
@@ -201,7 +204,7 @@ const Form = () => {
           </div>
         </div>
         <div className="col-12">
-          <button className="btn btn-primary">Terminar Compra</button>
+          <button className="btn btn-warning">Terminar Compra</button>
         </div>
       </form>
     </>

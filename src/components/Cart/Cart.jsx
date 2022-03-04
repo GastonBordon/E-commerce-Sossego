@@ -10,7 +10,8 @@ export const Cart = () => {
     <>
       {cartList.length !== 0 ? (
         <>
-          <table className="table table striped">
+          <h2 className="mt-4">Productos Seleccionados</h2>
+          <table className="container table border border-2 border-warning">
             <thead>
               <tr>
                 <th scope="col">#</th>
@@ -24,7 +25,13 @@ export const Cart = () => {
               {cartList.map((prod) => (
                 <tbody id="table-body" key={prod.item.id}>
                   <tr>
-                    <td>{prod.item.id}</td>
+                    <td>
+                      <img
+                        src={`${prod.item.src}`}
+                        className="imgCart"
+                        alt={`${prod.item.name}`}
+                      />
+                    </td>
                     <td>{prod.item.name}</td>
                     <td>${prod.item.price}</td>
                     <td>{prod.quantity}</td>
@@ -41,19 +48,27 @@ export const Cart = () => {
                 </tbody>
               ))}
               <tfoot>
-                <tr>
+                <tr className="totalRow">
                   <td>Total Compra</td>
                   <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
                   <td>${total()}</td>
+                  <td></td>
+                  <td className="row justify-content-end">
+                    <button
+                      onClick={clearCartList}
+                      className="d-block btn btn-danger"
+                    >
+                      Vaciar Carrito
+                    </button>
+                  </td>
+                  <td></td>
                 </tr>
               </tfoot>
             </>
           </table>
-          <button onClick={clearCartList}>Vaciar Carrito</button>
-          <Form />
+          <div className="container mt-3">
+            <Form />
+          </div>
         </>
       ) : (
         <>
