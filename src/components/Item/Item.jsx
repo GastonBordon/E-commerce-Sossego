@@ -8,10 +8,10 @@ const Item = memo(
       <>
         <div className="card mb-3 cardItemContainer border border-warning m-2">
           <div className="row g-0 d-flex flex-column">
-            <div>
+            <div className="imgSize">
               <img
                 src={`${prod.src}`}
-                className="img-fluid rounded-start"
+                className="rounded-start"
                 alt={`${prod.name}`}
               />
             </div>
