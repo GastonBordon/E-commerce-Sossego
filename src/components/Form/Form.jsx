@@ -53,45 +53,45 @@ const Form = () => {
       .then(({ id }) => setId(id))
       .catch((err) => console.log(err));
 
-    const queryCollection = collection(db, "productos");
+    setTimeout(async () => {
+      const queryCollection = collection(db, "productos");
 
-    const queryUpdateStock = query(
-      queryCollection,
-      where(
-        documentId(),
-        "in",
-        cartList.map((itm) => itm.item.id)
-      )
-    );
-
-    const batch = writeBatch(db);
-
-    await getDocs(queryUpdateStock)
-      .then((res) => {
-        res.docs.forEach((res) => {
-          debugger;
-          batch.update(res.ref, {
-            stock:
-              res.data().stock -
-              cartList.find((itm) => itm.item.id === res.id).quantity,
-          });
-        });
-        batch.commit();
-      })
-      .catch((err) => console.log(err))
-      //en finally vaciar el carrito y alert con compra exitosa
-      .finally(
-        () =>
-          setDataForm({
-            name: "",
-            surname: "",
-            email: "",
-            validateEmail: "",
-            phone: "",
-            adress: "",
-          }),
-        clearCartList()
+      const queryUpdateStock = query(
+        queryCollection,
+        where(
+          documentId(),
+          "in",
+          cartList.map((itm) => itm.item.id)
+        )
       );
+
+      const batch = writeBatch(db);
+
+      await getDocs(queryUpdateStock)
+        .then((res) => {
+          res.docs.forEach((res) => {
+            batch.update(res.ref, {
+              stock:
+                res.data().stock -
+                cartList.find((itm) => itm.item.id === res.id).quantity,
+            });
+          });
+          batch.commit();
+        })
+        .catch((err) => console.log(err))
+        .finally(
+          () =>
+            setDataForm({
+              name: "",
+              surname: "",
+              email: "",
+              validateEmail: "",
+              phone: "",
+              adress: "",
+            }),
+          clearCartList()
+        );
+    }, 3000);
   };
 
   const handleChange = (event) => {
@@ -103,8 +103,12 @@ const Form = () => {
 
   return (
     <>
+      {id !== "" && (
+        <div className="alert alert-warning" role="alert">
+          Compra Exitosa!!! Tu número de compra es: {id}
+        </div>
+      )}
       <h2 className="mt-4">Complete los datos de envío</h2>
-      {id !== "" && <h3>Tu número de orden es {id}</h3> && console.log(id)}
       <form
         onSubmit={checkOut}
         className="row g-3 needs- mt-4 mb-4 p-3 border border-1 border-warning"

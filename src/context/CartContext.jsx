@@ -53,7 +53,7 @@ function CartContextProvider({ children }) {
 
   function clearCartList() {
     setCartList([]);
-    saveStorage();
+    localStorage.clear();
   }
 
   function removeOne(id) {
