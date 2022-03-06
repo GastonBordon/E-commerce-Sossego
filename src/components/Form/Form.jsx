@@ -32,6 +32,8 @@ const Form = () => {
 
     order.buyer = dataForm;
     order.total = total();
+    order.date = Date();
+    order.state = "Generada";
 
     order.products = cartList.map((cartProduct) => {
       const id = cartProduct.item.id;
