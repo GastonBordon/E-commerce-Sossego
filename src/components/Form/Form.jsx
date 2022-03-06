@@ -164,6 +164,14 @@ const Form = () => {
               value={dataForm.validateEmail}
               required
             />
+            {dataForm.validateEmail !== dataForm.email && (
+              <div
+                className="alert alert-danger d-flex align-items-center form-control"
+                role="alert"
+              >
+                <div>Por favor, Ingrese un mismo email.</div>
+              </div>
+            )}
           </label>
         </div>
         <div className="col-md-3">
@@ -208,7 +216,9 @@ const Form = () => {
           </div>
         </div>
         <div className="col-12">
-          <button className="btn btn-warning">Terminar Compra</button>
+          <button id="checkOut" className="btn btn-warning">
+            Terminar Compra
+          </button>
         </div>
       </form>
     </>

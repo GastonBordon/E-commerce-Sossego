@@ -58,6 +58,8 @@ function CartContextProvider({ children }) {
 
   function removeOne(id) {
     setCartList(cartList.filter((prod) => prod.item.id !== id));
+    localStorage.removeItem(setCartList);
+
     saveStorage();
   }
   return (
